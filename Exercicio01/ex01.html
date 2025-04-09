@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[M1S05] Ex 1 – HTML/CSS: Login</title>
+    <link rel="stylesheet" href="/Exercicio01/ex01.css" />
+  </head>
+  <body>
+    <!-- [M1S05] Ex 1 – HTML/CSS: Login - criaremos uma tela de login e senha. Essa tela deve possuir o campo de usuário (textual) que será um código de acesso, um campo para escolher um setor (Comercial / RH / TI) e um campo de senha..-->
+    <div>
+      <header>
+        <h1 class="title">Login</h1>
+      </header>
+      <div>
+        <div class="user">
+          <label for="usuario">Usuário: </label>
+          <input type="text" id="usuario" name="usuario" required />
+
+          <label for="senha">Senha: </label>
+          <input type="password" id="senha" name="senha" required />
+        </div>
+
+        <div class="setor">
+          <label for="setor">Escolha um setor:</label>
+
+          <input type="radio" id="comercial" name="setor" />
+          <label for="comercial">Comercial</label>
+
+          <input type="radio" id="rh" name="setor" />
+          <label for="rh">RH</label>
+
+          <input type="radio" id="ti" name="setor" />
+          <label for="ti">TI</label>
+        </div>
+      </div>
+      <div>
+        <button class="botao">Enviar</button>
+      </div>
+    </div>
+  </body>
+</html>
