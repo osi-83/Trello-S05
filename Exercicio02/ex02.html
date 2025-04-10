@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[M1S05] Ex 2 – JS: Verificação de senha</title>
+    <link rel="stylesheet" href="/Exercicio02/ex02.css" />
+  </head>
+  <!-- Utilizando JavaScript, verifique se a senha corresponde as seguintes senhas predefinidas de acesso:
+Comercia = CMCL12 (Usuário) / Com&c1@l;
+RH = 98HR (Usuário) / RH!@2025 ;
+TI = DEV4567TI (Usuário) / IT&&||==2025-->
+  <body>
+    <div>
+      <header>
+        <h1 class="title">Login</h1>
+      </header>
+      <div>
+        <div class="user">
+          <input type="text" id="usuario" placeholder="Digite seu usuário">
+
+          <input type="password" id="senha" placeholder="Digite sua senha">
+        </div>
+
+        <div class="setor">
+          <label for="setor">Escolha um setor:</label>
+
+          <select id="setor" required>
+            <option value="">Selecione...</option>
+            <option value="comercial">Comercial</option>
+            <option value="rh">Rh</option>
+            <option value="ti">Ti</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <button onclick ="Btn()">Validar Usuário e Senha</button>
+      </div>
+    </div>
+  </body>
+  <script src="/Exercicio02/ex02.js"></script>
+</html>
