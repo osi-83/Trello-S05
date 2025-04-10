@@ -21,9 +21,5 @@ function Btn() {
   }
   
   Btn();
-//  Comercial = (Usuário) = CMCL12 / (senha) = Com&c1@l
-//  Rh = (Usuário) = 98HR / (senha) = RH!@2025
-//  Ti = (Usuário) = DEV4567TI / (senha) = IT&&||==2025
-
 
 
