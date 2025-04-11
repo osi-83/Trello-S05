@@ -49,7 +49,7 @@ function img() {
   container.style.left = `50%`;
   container.style.transform = `translate(-50%, -50%)`;
   container.style.textAlign = `center`;
-  container.style.zIndex = `50%`;
+  container.style.zIndex = `500`;
 
   const novaImagem = document.createElement("img");
   novaImagem.src = `/Exercicio03/carro.jfif`;
@@ -71,19 +71,18 @@ function img() {
 function botao() {
   const container = document.createElement(`div`);
   container.style.position = `absolute`;
-  container.style.top = `40%`;
+  container.style.top = `48%`;
   container.style.left = `50%`;
-  container.style.transform = `translate(-50%, -60%)`;
+  container.style.transform = `translate(-50%, -50%)`;
   container.style.textAlign = `center`;
-  container.style.zIndex = `50%`;
+  container.style.zIndex = `500`;
 
   const opcao = document.createElement("button");
   opcao.textContent = `Tabela`;
-  opcao.style.top = `45%`;
-  opcao.style.width = `250px`;
+  opcao.style.width = `300px`;
   opcao.onclick = () => {
     const tabela = document.createElement(`table`);
-    tabela.style.marginTop = `20px`;
+    tabela.style.marginTop = `10px`;
     tabela.border = `1`;
 
     const cabecalho = `
@@ -98,8 +97,20 @@ function botao() {
       <tr>
         <th>Felipe</th>
         <th>Ti</th>
-        <th>Analista</th>
+        <th>Analista Ti</th>
         <th>5.000</th>
+      </tr>
+      <tr>
+        <th>Aline</th>
+        <th>Rh</th>
+        <th>Estagiária</th>
+        <th>1.000</th>
+      </tr>
+      <tr>
+        <th>Cris</th>
+        <th>Comercial</th>
+        <th>Auxiliar administrativo</th>
+        <th>1.800</th>
       </tr>
       `;
     
