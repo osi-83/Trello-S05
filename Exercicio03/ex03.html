@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/Exercicio03/ex03.css" />
   </head>
   <!--  Caso a senha seja incorreta, deverá aparecer uma mensagem (dentro de uma div), em vermelho, indicando que o usuário ou a senha estão erradas para o setor escolhido.-->
-
   <body>
     <div>
       <header>
@@ -16,25 +15,22 @@
       <div>
         <div class="user">
           <input type="text" id="usuario" placeholder="Digite seu usuário" />
-
           <input type="password" id="senha" placeholder="Digite sua senha" />
         </div>
-
         <div class="setor">
           <label for="setor">Escolha um setor:</label>
-
           <select id="setor" required>
             <option value="">Selecione...</option>
             <option value="comercial">Comercial</option>
             <option value="rh">Rh</option>
             <option value="ti">Ti</option>
           </select>
+          <div id="erroSenha"></div>
         </div>
       </div>
       <div>
         <button onclick="Btn()">Validar Usuário e Senha</button>
       </div>
-      <div id="erroSenha"></div>
     </div>
   </body>
   <script src="/Exercicio03/ex03.js"></script>

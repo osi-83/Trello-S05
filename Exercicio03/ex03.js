@@ -1,46 +1,35 @@
 // Caso a senha seja incorreta, deverá aparecer uma mensagem (dentro de uma div), em vermelho, indicando que o usuário ou a senha estão erradas para o setor escolhido.
 
 function Btn() {
+  //declaração variáveis
   const usuariosValidos = [
     { usuario: "CMCL12", senha: "Com&c1@l", setor: "comercial" },
     { usuario: "98HR", senha: "RH!@2025", setor: "rh" },
     { usuario: "DEV4567TI", senha: "IT&&||==2025", setor: "ti" },
   ];
-
+  //input -> entrada de dados dos usuários
   const usuarioInput = document.getElementById(`usuario`).value;
   const senhaInput = document.getElementById(`senha`).value;
   const setorInput = document.getElementById(`setor`).value;
-
+  //Validação dos dados
   const usuarioEncontrado = usuariosValidos.find(
     (u) =>
       u.usuario === usuarioInput &&
       u.senha === senhaInput &&
-      u.setor.toLowerCase() === setorInput.toLowerCase()
+      u.setor === setorInput
   );
-
+  //manipulação e criação da mensagem de erro na tela
   const erroDiv = document.getElementById(`erroSenha`);
 
   if (usuarioEncontrado) {
     alert("Usuário e senha válidos.");
-  } else {
-    alert("Usuário ou senha inválidos.");
-
-    erroSenha.style.marginTop = `10px`;
-    erroSenha.style.color = `#ff0000`
-    erroSenha.innerHTML = `A senha ou setor informados não são válidos!!!`;
-
-    document.body.appendChild(erroSenha);
-
-    const erroDiv = document.querySelector(`.erro-senha`);
-    if (!erroDiv) {
-      const erroDiv = document.createElement(`div`);
-      erroDiv.className = `erro-senha`;
-      erroDiv.innerHTML = `A senha informada está errada para o setor informado!`;
-      erroDiv.style.padding = `10px`;
-      //erroDiv.style.gap = `10px`; 
-      erroDiv.style.marginTop = `10px`;
-
-      setor.appendChild(erroDiv);
-    }
+} else {
+    const erroDiv = document.createElement(`erroSenha`);
+    document.body.appendChild(erroDiv);
+    erroDiv.style.display = `flex`;
+    erroDiv.style.justifyContent = `center`;
+    erroDiv.style.marginTop = `20px`;
+    erroDiv.style.color = `#ff0000`
+    erroDiv.innerHTML = `Usuário ou a senha estão erradas para o setor escolhido!`;
   }
 }
