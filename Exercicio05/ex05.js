@@ -1,5 +1,3 @@
-// Caso a senha seja incorreta, deverá aparecer uma mensagem (dentro de uma div), em vermelho, indicando que o usuário ou a senha estão erradas para o setor escolhido.
-
 function Btn() {
   //declaração variáveis
   const usuariosValidos = [
@@ -78,8 +76,8 @@ function botao() {
   container.style.zIndex = `500`;
 
   const opcao = document.createElement("button");
-  opcao.textContent = `Tabela`;
-  opcao.style.width = `300px`;
+  opcao.textContent = `Ver cargos e salarios`;
+  opcao.style.width = `320px`;
   opcao.onclick = () => {
     const tabela = document.createElement(`table`);
     tabela.style.marginTop = `10px`;
