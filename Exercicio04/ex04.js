@@ -49,7 +49,7 @@ function img() {
   container.style.zIndex = `50%`;
 
   const novaImagem = document.createElement("img");
-  novaImagem.src = `/Exercicio03/carro.jfif`;
+  novaImagem.src = `/Exercicio04/carro.jfif`;
   novaImagem.alt = `imagem do carro`;
   novaImagem.style.width = `300px`;
 

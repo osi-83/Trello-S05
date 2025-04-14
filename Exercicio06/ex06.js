@@ -1,26 +1,30 @@
 function Btn() {
-  //declaração variáveis
-  const usuariosValidos = [
+    const usuariosValidos = [
     { usuario: "CMCL12", senha: "Com&c1@l", setor: "comercial" },
     { usuario: "98HR", senha: "RH!@2025", setor: "rh" },
     { usuario: "DEV4567TI", senha: "IT&&||==2025", setor: "ti" },
   ];
-  //input -> entrada de dados dos usuários
+
   const usuarioInput = document.getElementById(`usuario`).value;
   const senhaInput = document.getElementById(`senha`).value;
   const setorInput = document.getElementById(`setor`).value;
-  //Validação dos dados
+  
   const usuarioEncontrado = usuariosValidos.find(
     (u) =>
       u.usuario === usuarioInput &&
       u.senha === senhaInput &&
       u.setor === setorInput
-  );
-  //manipulação e criação da mensagem de erro na tela
+    );
+  
   const erroDiv = document.getElementById(`erroSenha`);
 
   if (usuarioEncontrado) {
     alert("Usuário e senha válidos.");
+
+    usuarioInput.value = ``;
+    senhaInput.value = ``;
+    setorInput.value =``;
+    erroDiv.textContent = ``;
 
     if (usuarioEncontrado.setor === `comercial`) {
       img();
@@ -29,14 +33,17 @@ function Btn() {
     if (usuarioEncontrado.setor === `rh`) {
       botao();
     }
+
+    if (usuarioEncontrado.setor === `ti`){
+      botao1();
+    }
+
   } else {
-    erroDiv.innerHTML = `Usuário ou a senha estão erradas para o setor escolhido!`;
-    erroDiv.style.display = `flex`;
-    erroDiv.style.justifyContent = `center`;
-    erroDiv.style.marginTop = `20px`;
+    erroDiv.textContent = `Usuário ou a senha estão erradas para o setor escolhido!`;
+    erroDiv.style.position = `absolute`;
+    erroDiv.style.marginTop = `80px`;
     erroDiv.style.color = `#ff0000`;
-    //const erroDiv = document.createElement(`erroSenha`);
-    //document.body.appendChild(erroDiv);
+    erroDiv.style.fontSize = `20px`;
   }
 }
 
@@ -50,7 +57,7 @@ function img() {
   container.style.zIndex = `500`;
 
   const novaImagem = document.createElement("img");
-  novaImagem.src = `/Exercicio05/carro.jfif`;
+  novaImagem.src = `/Exercicio06/carro.jfif`;
   novaImagem.alt = `imagem do carro`;
   novaImagem.style.width = `300px`;
 
@@ -117,5 +124,63 @@ function botao() {
   };
 
   container.appendChild(opcao);
+  document.body.appendChild(container);
+}
+
+function botao1() {
+ 
+  const container = document.createElement(`div`);
+  container.style.position = `fixed`;
+  container.style.top = `50%`;
+  container.style.left = `50%`;
+  container.style.transform = `translate(-50%, -50%)`;
+  container.style.textAlign = `center`;
+  container.style.zIndex = `500`;
+  container.style.display = `flex`;
+  container.style.flexDirection = `column`;
+  container.style.alignItems = `center`;
+  container.style.gap = `10px`;
+  container.style.backgroundColor = "#f0f0f0";
+  container.style.padding = "20px";
+  container.style.borderRadius = "10px";
+  container.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.1)";
+
+  const input = document.createElement("input");
+  input.type = "number";
+  input.placeholder = "Digite um número";
+  input.style.width = "300px";
+  input.style.height = "40px";
+  input.style.fontSize = "16px";
+  input.style.textAlign = "center";
+
+  const opcao = document.createElement("button");
+  opcao.textContent = "Converter para Binário";
+  opcao.style.width = "300px";
+  opcao.style.height = "40px";
+  opcao.style.fontSize = "16px";
+  opcao.style.cursor = "pointer";
+
+  const resultado = document.createElement("div");
+  resultado.style.fontSize = "18px";
+  resultado.style.marginTop = "10px";
+  resultado.style.color = "#333";
+
+  opcao.onclick = () => {
+    const numero = parseInt(input.value);
+    if (isNaN(numero)) {
+      resultado.textContent = `Por favor, digite um numero válido.`;
+      resultado.style.color = `#ff0000`;
+    }else{
+      const binario = numero.toString(2);
+      resultado.textContent = `Binário: ${binario}`;
+      resultado.style.color = `#007b00`;
+    }
+
+    resultado.value = ``;
+  };
+
+  container.appendChild(input);
+  container.appendChild(opcao);
+  container.appendChild(resultado);
   document.body.appendChild(container);
 }

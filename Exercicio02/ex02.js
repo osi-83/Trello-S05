@@ -19,7 +19,3 @@ function Btn() {
       alert("Usuário ou senha inválidos.");
     }
   }
-  
-  Btn();
-
-
